@@ -32,6 +32,7 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
         native-lib.cpp)
 
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+        xplayer_jni.cpp
         common/thread/thread.cpp
         )
 
