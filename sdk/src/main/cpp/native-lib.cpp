@@ -1,10 +1,17 @@
 #include <jni.h>
 #include <string>
 
+extern "C" {
+#include <libavutil/avutil.h>
+}
+
+
 extern "C" JNIEXPORT jstring JNICALL
 Java_com_github_zippozeng_xplayer_sample_MainActivity_stringFromJNI(
-        JNIEnv* env,
+        JNIEnv *env,
         jobject /* this */) {
-    std::string hello = "Hello from C++";
+    const char *version = av_version_info();
+
+    std::string hello(version);
     return env->NewStringUTF(hello.c_str());
 }

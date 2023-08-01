@@ -31,10 +31,25 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
         # List C/C++ source files with relative paths to this CMakeLists.txt.
         native-lib.cpp)
 
+target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
+        3rdparty/ffmepg/include
+        )
+
+target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE 3rdparty/ffmepg/lib)
+
+
 # Specifies libraries CMake should link to your target library. You
 # can link libraries from various origins, such as libraries defined in this
 # build script, prebuilt third-party libraries, or Android system libraries.
 target_link_libraries(${CMAKE_PROJECT_NAME}
+        PRIVATE
         # List libraries link to the target library
         android
-        log)
+        log
+        libavutil.a
+        libavcodec.a
+        libavformat.a
+        libavfilter.a
+        libswresample.a
+        libswscale.a
+        )
