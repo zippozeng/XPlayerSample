@@ -34,6 +34,7 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         xplayer_jni.cpp
         common/thread/thread.cpp
+        player/xplayer.cpp
         )
 
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
