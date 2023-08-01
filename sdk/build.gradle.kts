@@ -6,10 +6,10 @@ plugins {
 
 android {
     namespace = "com.github.zippozeng.xplayer.sdk"
-    compileSdk = 33
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 24
+        minSdk = libs.versions.minSdk.get().toInt()
 
         consumerProguardFiles("consumer-rules.pro")
         externalNativeBuild {
@@ -24,6 +24,10 @@ android {
     }
 
     buildTypes {
+        debug {
+
+        }
+
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -48,5 +52,6 @@ android {
 }
 
 dependencies {
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
     implementation(libs.core.ktx)
 }
