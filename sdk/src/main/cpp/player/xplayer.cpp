@@ -29,13 +29,6 @@ status_t XPlayer::Prepare() {
     return 0;
 }
 
-status_t XPlayer::PrepareAsync() {
-    if (m_player != nullptr) {
-        m_player->PrepareAsync();
-    }
-    return 0;
-}
-
 status_t XPlayer::Start() {
     if (m_player != nullptr) {
         m_player->Start();

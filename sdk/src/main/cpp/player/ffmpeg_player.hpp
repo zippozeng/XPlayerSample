@@ -1,25 +1,17 @@
 //
-// Created by zippozeng on 2023/7/15.
+// Created by zippozeng on 2023/8/2.
 //
 
-#ifndef XPLAYER_XPLAYER_HPP
-#define XPLAYER_XPLAYER_HPP
+#ifndef XPLAYERSAMPLE_FFMPEG_PLAYER_HPP
+#define XPLAYERSAMPLE_FFMPEG_PLAYER_HPP
 
-
-#include <cstdint>
-#include <string>
-#include <android/native_window.h>
 #include "IXPlayer.hpp"
 
-class XPlayer : IXPlayer {
+class FFmpegPlayer : public IXPlayer {
 public:
-    XPlayer();
 
-private:
-//    ~XPlayer() override;
-    ~XPlayer();
+    ~FFmpegPlayer();
 
-public:
     void SetDataSource(const std::string &_path) override;
 
     status_t Prepare() override;
@@ -29,8 +21,6 @@ public:
     status_t Stop() override;
 
     status_t Pause() override;
-
-    status_t SeekTo(long duration, int mode) override;
 
     bool IsPlaying() override;
 
@@ -48,8 +38,7 @@ public:
 
 private:
     std::string path;
-    IXPlayer *m_player = nullptr;
 };
 
 
-#endif //XPLAYER_XPLAYER_HPP
+#endif //XPLAYERSAMPLE_FFMPEG_PLAYER_HPP

@@ -31,8 +31,6 @@ public:
 
     virtual status_t Prepare() = 0;
 
-    virtual status_t PrepareAsync() = 0;
-
     virtual status_t Start() = 0;
 
     virtual status_t Stop() = 0;
