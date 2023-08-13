@@ -25,17 +25,15 @@ enum xplayer_player_states {
 class IXPlayer {
 public:
 
-//    virtual ~IXPlayer() = 0;
-
     virtual void SetDataSource(const std::string &_path) = 0;
 
     virtual status_t Prepare() = 0;
 
     virtual status_t Start() = 0;
 
-    virtual status_t Stop() = 0;
-
     virtual status_t Pause() = 0;
+
+    virtual status_t Stop() = 0;
 
     virtual status_t SeekTo(long duration, int mode) = 0;
 

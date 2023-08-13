@@ -3,10 +3,11 @@
 //
 
 #include "xplayer.hpp"
+#include "ffplay/ffmpeg_player.hpp"
 #include <logger.h>
 
 XPlayer::XPlayer() {
-//    m_player = new FFmpegPlayer(m_controller);
+    m_player = new FFmpegPlayer();
 }
 
 XPlayer::~XPlayer() {

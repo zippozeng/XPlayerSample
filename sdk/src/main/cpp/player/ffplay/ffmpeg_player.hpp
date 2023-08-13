@@ -5,7 +5,7 @@
 #ifndef XPLAYERSAMPLE_FFMPEG_PLAYER_HPP
 #define XPLAYERSAMPLE_FFMPEG_PLAYER_HPP
 
-#include "IXPlayer.hpp"
+#include "../IXPlayer.hpp"
 
 class FFmpegPlayer : public IXPlayer {
 public:
@@ -18,9 +18,11 @@ public:
 
     status_t Start() override;
 
+    status_t Pause() override;
+
     status_t Stop() override;
 
-    status_t Pause() override;
+    status_t SeekTo(long duration, int mode) override;
 
     bool IsPlaying() override;
 
@@ -37,7 +39,10 @@ public:
     status_t SetLooping(bool loop) override;
 
 private:
+    const int FFP_VERSION_MODULE_NAME_LENGTH = 13;
     std::string path;
+
+    void ShowVersionInt(char *_module, uint32_t version);
 };
 
 

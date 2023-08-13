@@ -15,8 +15,6 @@ class XPlayer : IXPlayer {
 public:
     XPlayer();
 
-private:
-//    ~XPlayer() override;
     ~XPlayer();
 
 public:

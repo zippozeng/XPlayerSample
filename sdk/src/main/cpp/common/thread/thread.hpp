@@ -24,9 +24,9 @@ public:
 
     void Join();
 
-    void Start();
-
     virtual void Run() = 0;
+
+    void Start();
 
 private:
     std::atomic<bool> started = false;
