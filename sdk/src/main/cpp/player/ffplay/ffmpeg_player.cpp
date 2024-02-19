@@ -22,14 +22,14 @@ void FFmpegPlayer::SetDataSource(const std::string &_path) {
 }
 
 status_t FFmpegPlayer::Prepare() {
-    LOGI("===== versions =====\n");
+    LOGI("----- versions -----\n");
     LOGI("FFmpeg: %s", av_version_info())
     ShowVersionInt("libavutil", avutil_version());
     ShowVersionInt("libavcodec", avcodec_version());
     ShowVersionInt("libavformat", avformat_version());
     ShowVersionInt("libswscale", swscale_version());
     ShowVersionInt("libswresample", swresample_version());
-    LOGI("===================\n");
+    LOGI("-------------------\n");
     // 创建队列
     // 创建时钟
     // 创建read线程

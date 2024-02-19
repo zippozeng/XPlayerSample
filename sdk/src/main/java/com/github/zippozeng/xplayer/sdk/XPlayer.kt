@@ -35,7 +35,6 @@ class XPlayer : IXPlayer {
         _prepare(mNativeContext)
     }
 
-
     override fun start() {
         _start(mNativeContext)
     }
